@@ -1,0 +1,162 @@
+% Hero Title
+
+Complex Analysis with GIMP
+================================================================================
+
+Really?
+--------------------------------------------------------------------------------
+
+## Yup, no kidding!
+
+--------------------------------------------------------------------------------
+
+
+### Three
+
+#### Four 
+
+Slide without title.
+
+
+Audio Shit
+================================================================================
+
+Software for Humans
+--------------------------------------------------------------------------------
+
+Examples (code)
+
+--------------------------------------------------------------------------------
+    
+    f = 440.0
+    x = cos(2 * pi * f * t)
+    audio.io.play(x)
+    audio.wave.write(x, "A4.wav")
+
+
+The path from VM to the Cloud
+--------------------------------------------------------------------------------
+
+VirtualBox, native, Jupyter, Jupyter on Azure.
+
+
+The Quest for Harthong
+================================================================================
+
+Why?
+--------------------------------------------------------------------------------
+
+Huge dude, original (contravariant) contributions to many fields.
+
+See Intuitionism 84
+
+Position on Sharing exceptionnally clear.
+
+Lost Content 
+--------------------------------------------------------------------------------
+
+... but everybody dies.
+
+The wayback machine ...
+
+Who speaks TeX?
+--------------------------------------------------------------------------------
+
+
+
+Stuff
+================================================================================
+
+Stiff
+--------------------------------------------------------------------------------
+
+sdksdmls
+
+Slack
+--------------------------------------------------------------------------------
+
+### Slick
+
+### Sluck
+
+#### 4th stoff
+
+
+Web / Publishing
+================================================================================
+
+Kawai
+--------------------------------------------------------------------------------
+
+Multiple "back-ends" / outputs, document model, transformation, etc.
+Vs digital first.
+
+Features/Design/Why of the HTML document:
+
+  - basic web features are still nice: link other pages, reflow, 
+    save images, etc.
+
+  - somehow limited use of the Web features (by design & lack of time)
+
+  - collection of single-page ("chapters") units
+
+  - (limited) search among those
+
+  - layout similar to PDF/LaTeX output (avoid divergence)
+
+  - typed structure (theorem, definition, etc.), 
+    proofs hiddent by default.
+
+  - good-looking, usable (exportable) Math formulas
+
+  - bibliography for humans & tooling
+
+NOTA: 
+
+--------------------------------------------------------------------------------
+  
+Production of the documents PDF & Web. Why the two documents are different.
+
+Explain source, transformations, etc.
+
+--------------------------------------------------------------------------------
+
+"Doodles":
+
+  - Cauchy-Riemann Equations
+
+  - Complex-Step Differentiation
+
+
+--------------------------------------------------------------------------------
+
+Open Dvlpt & Share (Why?)
+
+The easy part
+
+The hard part: modifications / repurposed content, etc.
+
+BUILDING the stuff --> platform.
+
+Solutions:
+
+  - deal with it
+
+  - vms / containers
+
+  - cloud. Free solution: repurpose CI engines, 
+
+
+Software & Platforms
+================================================================================
+
+Digital Audio
+--------------------------------------------------------------------------------
+
+  - History, dvlpt of dedicated tools (for humans)
+
+  - Now, use of Jupyter on Azure.
+
+    Pros: hands-on, replicable environments.
+
+

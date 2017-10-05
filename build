@@ -1,0 +1,7 @@
+#!/bin/bash
+
+REVEAL_OPTS=(-s -t revealjs
+             -V revealjs-url:reveal.js-3.5.0
+             -V theme:white)
+
+pandoc ${REVEAL_OPTS[*]} -o slides.html slides.txt 
