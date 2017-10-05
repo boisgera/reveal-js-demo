@@ -3,4 +3,4 @@ language: bash
 
 install: ./install-dependencies.sh
 
-script: true
+script: ./build
