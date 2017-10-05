@@ -6,4 +6,5 @@ install: ./install-dependencies.sh
 script:
   - export PATH="$HOME/miniconda/bin:$PATH" 
   - ./build
-  - curl --upload-file slides.html https://transfer.sh/slides.html
+  - zip -r slides.zip slides.html reveal.js-3.5.0
+  - curl --upload-file slides.zip https://transfer.sh/slides.zip
