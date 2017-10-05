@@ -6,3 +6,4 @@ install: ./install-dependencies.sh
 script:
   - export PATH="$HOME/miniconda/bin:$PATH" 
   - ./build
+  - curl --upload-file slides.html https://transfer.sh/slides.html
