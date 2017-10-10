@@ -1,7 +1,7 @@
 
 language: bash
 
-install: ./install-dependencies.sh
+install: ./setup
 
 script:
   - export PATH="$HOME/miniconda/bin:$PATH" 
