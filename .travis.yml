@@ -6,5 +6,6 @@ install: ./setup
 script:
   - export PATH="$HOME/miniconda/bin:$PATH" 
   - ./build
-  - zip -r slides.zip slides.html reveal.js-3.5.0 images
+  - mkdir slides && cp -r slides.zip slides.html reveal.js-3.5.0 images
+  - zip -r slides.zip slides
   - curl --upload-file slides.zip https://transfer.sh/slides.zip
