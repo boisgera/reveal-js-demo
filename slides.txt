@@ -1,4 +1,320 @@
-% Hero Title
+% TICE
+
+Introduction
+================================================================================
+
+Context
+--------------------------------------------------------------------------------
+
+Some teaching "problems" "solved" by technology.
+
+A collection of use cases
+
+food for thought ...
+
+----
+
+Stuff from
+
+  - Applied Mathematics
+
+  - Signal Processing
+
+  - Mecha, etc.
+
+
+Cauchy-Riemann Equations
+================================================================================
+
+Context
+--------------------------------------------------------------------------------
+
+### Complex Analysis
+
+Complex-valued functions of a complex variable
+
+  - visualisation?
+
+  - differentiability?
+
+  - holomorphy?
+
+--------------------------------------------------------------------------------
+
+[![Cauchy-Riemann Equations](images/Cauchy-Riemann.png)](http://eul.ink/complex-analysis/mathbox/)
+
+Stack
+--------------------------------------------------------------------------------
+
+  - Classic browser tech: HTML / CSS / JS
+
+  - 3D in the browser: [WebGL](https://en.wikipedia.org/wiki/WebGL) / 
+    [Three.js](https://threejs.org) / 
+    [MathBox](https://github.com/unconed/MathBox.js)
+
+  - Examples (Steve Wittens): 
+
+      - [acko.net](http://acko.net/) 
+
+      - [The Pixel Factory](https://acko.net/tv/pixelfactory/)
+
+      - ["PowerPoint Must Die"](acko.net/blog/mathbox2/)
+
+  -  [MathBox 2?](https://github.com/unconed/mathbox) ...
+
+
+Poisson Image Editing
+================================================================================
+
+Context
+--------------------------------------------------------------------------------
+
+### Complex Analysis
+
+  - Solution of the Laplace equation in 2D
+
+  - Modern Applications?
+
+    - Heat equation?
+
+    - Fluid Mechanics?
+
+    - ...
+
+--------------------------------------------------------------------------------
+
+Use [![](images/GIMP.svg){.icon}][GIMP] GIMP
+--------------------------------------------------------------------------------
+
+GNU Image Manipulation Program
+
+[GIMP]: https://www.gimp.org/
+
+What's missing?
+--------------------------------------------------------------------------------
+
+![](images/objects-final.jpg)
+
+
+A watch ...
+--------------------------------------------------------------------------------
+
+![](images/objects.jpg)
+
+
+GIMP Healing Tool
+--------------------------------------------------------------------------------
+
+![](images/desktop.jpg)
+
+
+More Details ...
+--------------------------------------------------------------------------------
+
+[Poisson Image Editing](https://eul.ink/complex-analysis/Poisson%20Image%20Editing/)
+
+
+Complex-Step Differentiation
+================================================================================
+
+Context
+--------------------------------------------------------------------------------
+
+#### Numerical Analysis
+
+Compute the derivative of `f(x)`.
+
+    def FD(f, x, h):
+        return (f(x+h) - f(x)) / h
+
+The step `h` may be either too large or too small.
+
+----
+
+Some other difference schemes perform better.
+
+  - Demonstrate the problems with `FD`
+
+  - Show the improvement
+
+  - Not the solution / explanation yet (teaser)
+
+Video / Screencast?
+
+
+Use [![](images/asciinema.svg){.icon}][asciinema] ASCIINEMA
+--------------------------------------------------------------------------------
+
+[asciinema]: https://asciinema.org/
+
+"Asciicast": <https://asciinema.org/a/39379>
+
+
+Robotics
+================================================================================
+
+Context
+--------------------------------------------------------------------------------
+
+### Kinematics of Wheeled Robots
+
+Some type of wheels don't induce any kinematic constraint
+
+
+Show
+--------------------------------------------------------------------------------
+
+<iframe width="700" height="394" src="https://www.youtube.com/embed/wECcwlY0hOs?rel=0" frameborder="0" allowfullscreen></iframe>
+
+
+Prove
+--------------------------------------------------------------------------------
+
+[![Caster Wheel Equations](images/caster-wheel-equations.png)][Caster Wheel Equations]
+
+[Caster Wheel Equations]: https://eul.ink/robotics/Kinematics%20of%20Caster%20Wheels/index.html
+
+
+Demo (Interactive)
+--------------------------------------------------------------------------------
+
+[![Caster Wheel Demo](images/caster-wheel.png)][Caster Wheel Demo]
+
+[Caster Wheel Demo]: https://eul.ink/robotics/caster-wheel-demo/index.html
+
+
+Demo Tech Stack
+--------------------------------------------------------------------------------
+
+  - ![](images/SVG.svg){.icon} [Scalable Vector Graphics](https://www.w3.org/TR/SVG/) 
+
+  - ![](images/coffeescript.svg){.icon} [Coffeescript](http://coffeescript.org/)
+
+  - ![](images/vue.js.png){.icon}  [Vue.js](https://vuejs.org/)
+
+
+More Details ...
+--------------------------------------------------------------------------------
+
+[Robotics](https://eul.ink/robotics/)
+
+
+Digital Audio Coding
+===============================================================================
+
+-------------------------------------------------------------------------------
+
+  - context: short / driven by use-cases / no prerequisite
+
+  - software for humans (API, mostly)
+
+  - Virtualbox / Native / Jupyter (demo) / Jupyter (cloud)
+
+
+
+
+
+
+Plan / Items
+================================================================================
+
+--------------------------------------------------------------------------------
+
+Complex Analysis
+
+  - context: classic (but short) / applications
+
+  - Mathbox
+
+  - GIMP
+
+  - Asciinema
+
+-----
+
+Audio:
+
+  - context: short / driven by use-cases / no prerequisite
+
+  - software for humans (API, mostly)
+
+  - Virtualbox / Native / Jupyter (demo) / Jupyter (cloud)
+
+-----
+
+Web / Publishing
+
+  - Harthong example, issue analysis, solutions
+
+  - Multi-targets, document transformation
+
+  - Repo, buildin, etc.: DIY, docker, CI.
+
+
+
+
+
+Testin'
+================================================================================
+
+Image
+--------------------------------------------------------------------------------
+
+
+![GIMP](images/GIMP.svg)
+
+----
+
+<img 
+  src="images/GIMP.svg" 
+  style="border:0;width:50%;">
+</img>
+
+----
+
+<h1>
+Use ![](images/GIMP.svg){.icon} really ...
+</h1>
+
+<h1>
+Use [![](images/GIMP.svg){.icon}](https://www.gimp.org) really ...
+</h1>
+
+<h1>
+Use <a href="https://www.gimp.org/"><img src="images/GIMP.svg" 
+style="display:inline;border:0;width:1em;margin:0em;box-shadow:none;vertical-align:-10%;"></img></a>
+</h1>
+
+<h2>
+Use <a href="https://www.gimp.org/"><img src="images/GIMP.svg" 
+style="display:inline;border:0;width:1em;margin:0em;box-shadow:none;vertical-align:-10%;"></img></a>
+</h2>
+
+Yeah, really!
+
+----
+
+Arf, need only image on the screen for `max-height: 95%` to work ...
+and even then, that sucks?
+
+----
+
+![Image](images/image.jpg) \
+
+
+----
+
+<img src="images/image.jpg" class="stretch"></img>
+
+----
+
+Layout sucks
+
+----
+
+<div style="width:100%; height:100vh; background-color:#ff0000;">
+</div>
+
 
 Complex Analysis with GIMP
 ================================================================================
@@ -158,5 +474,35 @@ Digital Audio
   - Now, use of Jupyter on Azure.
 
     Pros: hands-on, replicable environments.
+
+
+
+
+<style>
+
+.reveal section img {
+  border:0;
+  max-width:80vh;
+}
+
+.reveal section img.medium {
+  border:0;
+  max-width:50vh;
+}
+
+.reveal section img.icon {
+  display:inline;
+  border:0;
+  width:1em;
+  margin:0em;
+  box-shadow:none;
+  vertical-align:-10%;
+}
+</style>
+
+
+<script 
+  src="https://use.fontawesome.com/9ad4d58b37.js">
+</script>
 
 

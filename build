@@ -1,7 +1,9 @@
 #!/bin/bash
 
-REVEAL_OPTS=(-s -t revealjs
-             -V revealjs-url:reveal.js-3.5.0
-             -V theme:white)
+MATHJAX_CDN=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML
 
-pandoc ${REVEAL_OPTS[*]} -o slides.html slides.txt 
+OPTIONS=(-s -t revealjs
+         -V revealjs-url:reveal.js-3.5.0
+         -V theme:white)
+
+pandoc ${OPTIONS[*]} -o slides.html slides.txt 
