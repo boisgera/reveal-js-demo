@@ -156,9 +156,15 @@ Robotics
 Context
 --------------------------------------------------------------------------------
 
-### Kinematics of Wheeled Robots
+### Wheeled Robots Kinematics
 
-Some type of wheels don't induce any kinematic constraint
+Some wheels yield no kinematic constraint.
+
+Example: caster wheels, swedish wheels, etc.
+
+So we remove them from the model.
+
+Not convinced?
 
 
 Show
@@ -175,7 +181,7 @@ Prove
 [Caster Wheel Equations]: https://eul.ink/robotics/Kinematics%20of%20Caster%20Wheels/index.html
 
 
-Demo (Interactive)
+Demo
 --------------------------------------------------------------------------------
 
 [![Caster Wheel Demo](images/caster-wheel.png)][Caster Wheel Demo]
@@ -202,148 +208,57 @@ More Details ...
 Digital Audio Coding
 ===============================================================================
 
+Context
 -------------------------------------------------------------------------------
 
-  - context: short / driven by use-cases / no prerequisite
+  - Build 4 Audio Codecs:  
 
-  - software for humans (API, mostly)
+    Lossless codec, AU-like, voice codec, MP3-like
 
-  - Virtualbox / Native / Jupyter (demo) / Jupyter (cloud)
+  - 10 contact hours (50% lectures / 50% lab sessions)
+
+  - no prerequisite (programming, signal processing, etc.)
+
+### INSANE
 
 
-
-
-
-
-Plan / Items
-================================================================================
-
+Software "for Humans"
 --------------------------------------------------------------------------------
 
-Complex Analysis
+  - expression coined by [Kenneth Reitz](https://www.kennethreitz.org/python-for-humans)
 
-  - context: classic (but short) / applications
+  - Python
 
-  - Mathbox
+  - Standard Library `httplib` vs `requests` 
 
-  - GIMP
-
-  - Asciinema
-
------
-
-Audio:
-
-  - context: short / driven by use-cases / no prerequisite
-
-  - software for humans (API, mostly)
-
-  - Virtualbox / Native / Jupyter (demo) / Jupyter (cloud)
-
------
-
-Web / Publishing
-
-  - Harthong example, issue analysis, solutions
-
-  - Multi-targets, document transformation
-
-  - Repo, buildin, etc.: DIY, docker, CI.
+Need something suitable as pseudo-code in lectures.
 
 
-
-
-
-Testin'
-================================================================================
-
-Image
+Make / Play / Save a Pure Tone
 --------------------------------------------------------------------------------
 
+### High-level API
 
-![GIMP](images/GIMP.svg)
-
-----
-
-<img 
-  src="images/GIMP.svg" 
-  style="border:0;width:50%;">
-</img>
-
-----
-
-<h1>
-Use ![](images/GIMP.svg){.icon} really ...
-</h1>
-
-<h1>
-Use [![](images/GIMP.svg){.icon}](https://www.gimp.org) really ...
-</h1>
-
-<h1>
-Use <a href="https://www.gimp.org/"><img src="images/GIMP.svg" 
-style="display:inline;border:0;width:1em;margin:0em;box-shadow:none;vertical-align:-10%;"></img></a>
-</h1>
-
-<h2>
-Use <a href="https://www.gimp.org/"><img src="images/GIMP.svg" 
-style="display:inline;border:0;width:1em;margin:0em;box-shadow:none;vertical-align:-10%;"></img></a>
-</h2>
-
-Yeah, really!
-
-----
-
-Arf, need only image on the screen for `max-height: 95%` to work ...
-and even then, that sucks?
-
-----
-
-![Image](images/image.jpg) \
+    >>> f = 440.0
+    >>> x = cos(2 * pi * f * t)
+    >>> audio.io.play(x)
+    >>> audio.wave.write(x, "A4.wav")
 
 
-----
-
-<img src="images/image.jpg" class="stretch"></img>
-
-----
-
-Layout sucks
-
-----
-
-<div style="width:100%; height:100vh; background-color:#ff0000;">
-</div>
-
-
-Complex Analysis with GIMP
-================================================================================
-
-Really?
+Get 16 bit Integer Data
 --------------------------------------------------------------------------------
 
-## Yup, no kidding! fo' real!
+### Mid-level API
 
+    >>> audio.wave.read(x, "A4.wav")
+    >>> audio.wave.read(x, "A4.wav", scale=None)
+
+
+Read Raw Binary Data
 --------------------------------------------------------------------------------
 
+### Low-level API
 
-### Three
-
-#### Four 
-
-Slide without title.
-
-
-Audio Shit
-================================================================================
-
-Software for Humans
---------------------------------------------------------------------------------
-
-Examples (code)
-
---------------------------------------------------------------------------------
-    
     f = 440.0
     x = cos(2 * pi * f * t)
     audio.io.play(x)
@@ -355,11 +270,30 @@ The path from VM to the Cloud
 
 VirtualBox, native, Jupyter, Jupyter on Azure.
 
+  - Virtualbox / Native / Jupyter (demo) / Jupyter (cloud)
 
-The Quest for Harthong
+
+Pros: hands-on, replicable environments.
+
+
+Search Test
 ================================================================================
 
-Why?
+Search
+--------------------------------------------------------------------------------
+
+<!-- Vue App and (large) index loaded at the bottom of the page -->
+<div id="app" style="min-height: 80vh;">
+<search></search>
+</div>
+
+
+
+
+Web / Publishing
+===============================================================================
+
+The Quest for Harthong
 --------------------------------------------------------------------------------
 
 Huge dude, original (contravariant) contributions to many fields.
@@ -378,71 +312,14 @@ The wayback machine ...
 Who speaks TeX?
 --------------------------------------------------------------------------------
 
+Sub
+-------------------------------------------------------------------------------
 
+  - Harthong example, issue analysis, solutions
 
-Stuff
-================================================================================
+  - Multi-targets, document transformation
 
-Stiff
---------------------------------------------------------------------------------
-
-sdksdmls
-
-Slack
---------------------------------------------------------------------------------
-
-### Slick
-
-### Sluck
-
-#### 4th stoff
-
-
-Web / Publishing
-================================================================================
-
-Kawai
---------------------------------------------------------------------------------
-
-Multiple "back-ends" / outputs, document model, transformation, etc.
-Vs digital first.
-
-Features/Design/Why of the HTML document:
-
-  - basic web features are still nice: link other pages, reflow, 
-    save images, etc.
-
-  - somehow limited use of the Web features (by design & lack of time)
-
-  - collection of single-page ("chapters") units
-
-  - (limited) search among those
-
-  - layout similar to PDF/LaTeX output (avoid divergence)
-
-  - typed structure (theorem, definition, etc.), 
-    proofs hiddent by default.
-
-  - good-looking, usable (exportable) Math formulas
-
-  - bibliography for humans & tooling
-
-NOTA: 
-
---------------------------------------------------------------------------------
-  
-Production of the documents PDF & Web. Why the two documents are different.
-
-Explain source, transformations, etc.
-
---------------------------------------------------------------------------------
-
-"Doodles":
-
-  - Cauchy-Riemann Equations
-
-  - Complex-Step Differentiation
-
+  - Repo, buildin, etc.: DIY, docker, CI.
 
 --------------------------------------------------------------------------------
 
@@ -461,19 +338,6 @@ Solutions:
   - vms / containers
 
   - cloud. Free solution: repurpose CI engines, 
-
-
-Software & Platforms
-================================================================================
-
-Digital Audio
---------------------------------------------------------------------------------
-
-  - History, dvlpt of dedicated tools (for humans)
-
-  - Now, use of Jupyter on Azure.
-
-    Pros: hands-on, replicable environments.
 
 
 
@@ -498,11 +362,31 @@ Digital Audio
   box-shadow:none;
   vertical-align:-10%;
 }
+
+.reveal code {
+  font-family: Inconsolata, monospace;
+}
+
+.reveal pre code {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+input {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 42px;
+  line-height: 54.6px;
+}
+
 </style>
 
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"> 
 
-<script 
-  src="https://use.fontawesome.com/9ad4d58b37.js">
-</script>
+<!-- Document Index & Vue App -->
+<script src="https://use.fontawesome.com/9ad4d58b37.js"></script>
+<script src="js/index.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="js/search.js"></script>
+
 
 
