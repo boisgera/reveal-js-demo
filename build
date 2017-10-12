@@ -4,6 +4,7 @@ MATHJAX_CDN=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?conf
 
 OPTIONS=(-s -t revealjs
          -V revealjs-url:reveal.js-3.5.0
-         -V theme:white)
+         -V theme:white
+         --smart)
 
 pandoc ${OPTIONS[*]} -o slides.html slides.txt 
