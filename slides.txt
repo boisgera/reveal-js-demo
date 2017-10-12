@@ -461,7 +461,7 @@ Self-Hosted
 External Hosting (Sources)
 --------------------------------------------------------------------------------
 
-[![](images/bitbucket)](https://bitbucket.org/boisgera/complex-differentiability/src)
+[![](images/bitbucket-complex-differentiability.png)](https://bitbucket.org/boisgera/complex-differentiability/src)
 
 
 MINES ParisTech / DOI
@@ -476,21 +476,27 @@ Document Format & Tools
 
 Hard problem.
 
+Source?
+
 Target: HTML, PDF, other? Digital first?
 
 **TODO:** develop
+
+Universal Model & converters?
+
+Benefits HTML model / constraint of PDF fallback.
+
+Document Model, Software support, transformation, example.
 
 
 Building
 --------------------------------------------------------------------------------
 
-  - Setup instructions, Build (script)
+  - Setup (instructions / script) & Build (script)
 
   - Provide build platforms (containers or VMs)
 
-  - Continuous integration
-
-    These slides: 
+  - Continuous integration:
     [<i class="fa fa-github"></i>](https://github.com/boisgera/reveal-js-demo)
     /
     [![](images/travis-CI.svg){.icon}](https://travis-ci.org/boisgera/reveal-js-demo)
