@@ -1,4 +1,6 @@
-% TICE
+% Web Tech & Teaching -- An Experience
+% Sébastien Boisgérault, MINES ParisTech
+% 16/10/2017, Mini-Séminaire Créative
 
 Introduction
 ================================================================================
@@ -58,7 +60,7 @@ Stack
 
       - [The Pixel Factory](https://acko.net/tv/pixelfactory/)
 
-      - ["PowerPoint Must Die"](acko.net/blog/mathbox2/)
+      - ["PowerPoint Must Die"](https://acko.net/blog/mathbox2/)
 
   -  [MathBox 2?](https://github.com/unconed/mathbox) ...
 
@@ -211,27 +213,49 @@ Digital Audio Coding
 Context
 -------------------------------------------------------------------------------
 
-  - Build 4 Audio Codecs:  
+  - experiment / design / build 4 audio codecs:  
 
-    Lossless codec, AU-like, voice codec, MP3-like
+    Lossless codec, voice codec, AU-like, MP3-like
 
   - 10 contact hours (50% lectures / 50% lab sessions)
 
-  - no prerequisite (programming, signal processing, etc.)
-
-### INSANE
+  - no prerequisite (programming, signal processing)
 
 
 Software "for Humans"
 --------------------------------------------------------------------------------
 
-  - expression coined by [Kenneth Reitz](https://www.kennethreitz.org/python-for-humans)
+  - expression [coined by Kenneth Reitz](https://www.kennethreitz.org/python-for-humans)
 
-  - Python
+  - started with "HTTP for Humans": Python library
+    [Requests](http://docs.python-requests.org/en/master),
+    a better, higher-level [httplib](https://docs.python.org/2/library/httplib.html)
 
-  - Standard Library `httplib` vs `requests` 
+The Zen of Python
+--------------------------------------------------------------------------------
 
-Need something suitable as pseudo-code in lectures.
+The Python language is already made for humans:   
+<https://www.python.org/dev/peps/pep-0020/>
+
+  - Beautiful is better than ugly.
+
+  - Explicit is better than implicit.
+
+  - Simple is better than complex.
+
+  - etc.
+
+
+Audio Coding for Humans
+--------------------------------------------------------------------------------
+
+Python `audio` package / collection of modules
+
+  - focus on the API (few new features)
+
+  - match the domain abstractions (several layers)
+
+  - suitable for live demos & pseudo-code
 
 
 Make / Play / Save a Pure Tone
@@ -239,87 +263,256 @@ Make / Play / Save a Pure Tone
 
 ### High-level API
 
+Use [NumPy](http://www.numpy.org/) arrays.
+
     >>> f = 440.0
     >>> x = cos(2 * pi * f * t)
+    array([ 1.        ,  0.99803566,  0.99215037, ...,  0.98236725,
+            0.99215037,  0.99803566])
     >>> audio.io.play(x)
     >>> audio.wave.write(x, "A4.wav")
 
 
-Get 16 bit Integer Data
+Experience Quantization
 --------------------------------------------------------------------------------
 
 ### Mid-level API
 
-    >>> audio.wave.read(x, "A4.wav")
-    >>> audio.wave.read(x, "A4.wav", scale=None)
+    >>> audio.wave.read("A4.wav")
+    array([[ 0.99996948,  0.99804688,  0.99215698, ...,  0.98236084,
+             0.99215698,  0.99804688]])
+    >>> audio.wave.read("A4.wav", scale=False)
+    array([[32767, 32704, 32511, ..., 32190, 32511, 32704]], dtype=int16)
 
 
-Read Raw Binary Data
+
+Read Raw Binary Data / Metadata
 --------------------------------------------------------------------------------
 
 ### Low-level API
 
-    f = 440.0
-    x = cos(2 * pi * f * t)
-    audio.io.play(x)
-    audio.wave.write(x, "A4.wav")
+    >>> bytes = open("A4.wav").read()
+    >>> from audio.bitstream import BitStream
+    >>> bits = BitStream(bytes).read(8 * 16)
+    >>> bits
+    01010010010010010100011001000110101111000000100100000100000000000101011101000001010101100100010101100110011011010111010000100000
+    >>> bits.read(str)
+    'RIFF\xbc\t\x04\x00WAVEfmt '
 
 
-The path from VM to the Cloud
+Specific Needs
 --------------------------------------------------------------------------------
 
-VirtualBox, native, Jupyter, Jupyter on Azure.
+It works on my machine! But ...
 
-  - Virtualbox / Native / Jupyter (demo) / Jupyter (cloud)
+  - non-standard and/or home-made software
+    (make your software available!)
+
+  - system/platform dependencies
+    (your software is *not* portable)
+
+  - need a custom student experience
 
 
-Pros: hands-on, replicable environments.
+Platform Architecture
+--------------------------------------------------------------------------------
+
+ 1. Virtual Machines: 
+    [![](images/ubuntu.png){.icon}][Ubuntu] / 
+    [![](images/virtualbox.png){.icon}][VirtualBox] / 
+    [![](images/windows.png){.icon}][Windows] / 
+    <i class="fa fa-desktop"></i>
+
+ 2. Native Machines (throw-away): 
+    [![](images/ubuntu.png){.icon}][Ubuntu]  / 
+    <i class="fa fa-desktop"></i>
+
+ 3. Cloud-based VM:
+    [![](images/ubuntu.png){.icon}][Ubuntu]  / 
+    [![](images/docker.png){.icon}][Docker] / 
+    [![](images/windows.png){.icon}][Windows] /
+    <i class="fa fa-desktop"></i> /
+    [<i class="fa fa-cloud"></i>](https://azure.microsoft.com/)
+    
+[Ubuntu]: https://www.ubuntu.com/
+[Windows]: https://www.microsoft.com/en-us/windows
+[VirtualBox]: https://www.virtualbox.org/
+[Docker]: https://www.docker.com/
 
 
-Search Test
+Spyder [![](images/spyder-logo.png){.icon}][Spyder] IDE
+--------------------------------------------------------------------------------
+
+"Matlab-like" experience
+
+![Spyder IDE](images/spyder-screenshot.png)\ 
+
+
+[Spyder]: https://github.com/spyder-ide/spyder
+
+
+Jupyter [![](images/jupyter.png){.icon}][Jupyter] Notebook
+--------------------------------------------------------------------------------
+
+Notebook experience
+
+![Jupyter screenshot](images/jupyter-screenshot.png) \ 
+
+[Jupyter]: http://jupyter.org/
+
+
+Jupyter
+--------------------------------------------------------------------------------
+
+  - Executable Notebook: notes, code, graphs, etc.
+
+  - In the browser (with local or remote code execution)
+
+  - Support for several languages (including Python)
+
+
+Jupyter in the Cloud
+--------------------------------------------------------------------------------
+
+  - Execution model is cloud-friendly
+
+  - Get the benefits of virtual machines
+
+  - dependencies/deployement
+
+Free (as in beer): [Microsoft Azure Notebooks][MAN]
+
+[MAN]: https://notebooks.azure.com/
+
+
+Demo
+--------------------------------------------------------------------------------
+
+[![](images/wave-notebook.png)](https://notebooks.azure.com/boisgera/libraries/audio)
+
+
+Publishing Courses
+================================================================================
+
+Example
+--------------------------------------------------------------------------------
+
+### "Probabilités et Statistiques" 
+
+#### by Jacques Harthong
+
+  - <i class="fa fa-check" style="color: green"></i> 
+    renowned (if controversial) scientist  
+    (see e.g. [Intuitionisme 84] with G. Reeb)
+
+  - <i class="fa fa-check" style="color: green"></i> 
+    clear pro-sharing stance (cf "[Le Photocopillage]")
+
+  - <i class="fa fa-check" style="color: green"></i> 
+    book published (Diderot Editeur Arts Sciences) 
+  
+  - <i class="fa fa-check" style="color: green"></i> 
+    sources published online (Strasbourg University)
+
+[Le Photocopillage]: https://github.com/boisgera/harthong-prob/blob/master/Le%20Photocopillage.md
+
+[Intuitionisme 84]: https://mathinfo.unistra.fr/fileadmin/upload/IREM/Publications/L_Ouvert/n077Reeb/o_77reeb_42-77.pdf
+
+[Decitre]: https://www.decitre.fr/livres/probabilites-et-statistiques-9782841340705.html
+
+[Strasbourg]: http://moire4.u-strasbg.fr/Jacques.htm
+
+
+--------------------------------------------------------------------------------
+
+  - <i class="fa fa-times" style="color: red"></i> 
+    edition out of print
+
+  - <i class="fa fa-times" style="color: red"></i> 
+    sources not available anymore
+
+  - <i class="fa fa-times" style="color: red"></i> 
+    old tech, sources only (no build)
+
+  - <i class="fa fa-times" style="color: red"></i> 
+    build does not succeed
+
+
+Hosting
+--------------------------------------------------------------------------------
+
+Source vs result.
+
+  - Self-hosting
+
+  - External Provider (ex: GitHub/BitBucket, etc.)
+
+  - Institution (role of DOI)
+
+    Zenodo, HAL (CEL), etc.
+
+
+Self-Hosted
+--------------------------------------------------------------------------------
+
+[![](images/eul.ink-complex-analysis.png)](https://eul.ink/complex-analysis/)
+
+
+External Hosting (Sources)
+--------------------------------------------------------------------------------
+
+[![](images/bitbucket)](https://bitbucket.org/boisgera/complex-differentiability/src)
+
+
+MINES ParisTech / DOI
+--------------------------------------------------------------------------------
+
+[![](images/Complex Analysis and Applications.png)](http://direns.mines-paristech.fr/Sites/Complex-analysis/)
+
+-----
+
+Document Format & Tools
+--------------------------------------------------------------------------------
+
+Hard problem.
+
+Target: HTML, PDF, other? Digital first?
+
+**TODO:** develop
+
+
+Building
+--------------------------------------------------------------------------------
+
+  - Setup instructions, Build (script)
+
+  - Provide build platforms (containers or VMs)
+
+  - Continuous integration
+
+    These slides: 
+    [<i class="fa fa-github"></i>](https://github.com/boisgera/reveal-js-demo)
+    /
+    [![](images/travis-CI.svg){.icon}](https://travis-ci.org/boisgera/reveal-js-demo)
+
+<!--
+
+Misc. / Sandbox
 ================================================================================
 
 Search
 --------------------------------------------------------------------------------
 
+-->
+
 <!-- Vue App and (large) index loaded at the bottom of the page -->
+<!--
 <div id="app" style="min-height: 80vh;">
 <search></search>
 </div>
+-->
 
-
-
-
-Web / Publishing
-===============================================================================
-
-The Quest for Harthong
---------------------------------------------------------------------------------
-
-Huge dude, original (contravariant) contributions to many fields.
-
-See Intuitionism 84
-
-Position on Sharing exceptionnally clear.
-
-Lost Content 
---------------------------------------------------------------------------------
-
-... but everybody dies.
-
-The wayback machine ...
-
-Who speaks TeX?
---------------------------------------------------------------------------------
-
-Sub
--------------------------------------------------------------------------------
-
-  - Harthong example, issue analysis, solutions
-
-  - Multi-targets, document transformation
-
-  - Repo, buildin, etc.: DIY, docker, CI.
+<!--
 
 --------------------------------------------------------------------------------
 
@@ -329,7 +522,7 @@ The easy part
 
 The hard part: modifications / repurposed content, etc.
 
-BUILDING the stuff --> platform.
+BUILDING the stuff / platform.
 
 Solutions:
 
@@ -339,6 +532,7 @@ Solutions:
 
   - cloud. Free solution: repurpose CI engines, 
 
+-->
 
 
 
