@@ -15,14 +15,14 @@ Introduction
   - Mathematics / Control / Signal Processing / ...
 
 
-This Talk
+This Set of Slides
 --------------------------------------------------------------------------------
 
 In the context of Web Tech & Teaching:
 
 experience feedback / thoughts / tech. watch
 
-  - collection of use cases (some are tiny)
+  - collection of use cases (some tiny ones)
 
   - pedagogy / implementation / publishing
 
@@ -151,7 +151,23 @@ Use [![](images/asciinema.svg){.icon}][asciinema] ASCIINEMA
 
 [asciinema]: https://asciinema.org/
 
-"Asciicast": <https://asciinema.org/a/39379>
+
+Asciicast
+--------------------------------------------------------------------------------
+
+[![](images/asciinema-screenshot.png)](https://asciinema.org/a/39379)
+
+
+Tech Stack
+--------------------------------------------------------------------------------
+
+  - desktop app: record & upload 
+
+  - lightweight data: asciicast is just [JSON](http://www.json.org/)
+
+  - [ClojureScript](https://clojurescript.org/) project
+
+  - embed in HTML or host in the cloud
 
 
 Robotics
@@ -322,7 +338,7 @@ It now works on my machine! But ...
 Platform Architecture
 --------------------------------------------------------------------------------
 
- 1. Native Machines (throw-away): 
+ 1. Real Machines: 
     [![](images/ubuntu.png){.icon}][Ubuntu]  / 
     <i class="fa fa-desktop"></i>
 
