@@ -458,19 +458,25 @@ Example
   - <i class="fa fa-times" style="color: red"></i> 
     build does not succeed
 
+. . .
+
+#### Can we do better?   
+
+The example of [Complex Analysis and Applications](https://doi.org/10.23646/oer.000001)
+
 
 Hosting
 --------------------------------------------------------------------------------
 
-Source vs result.
+Sources / Documents
 
-  - Self-hosting
+  - Self-hosting?
 
   - External Provider (ex: GitHub/BitBucket, etc.)
 
-  - Institution (role of DOI)
-
-    Zenodo, HAL (CEL), etc.
+  - Institution (role of [DOI](https://www.doi.org/)), 
+    [Zenodo](https://zenodo.org/), 
+    HAL ([CEL](https://cel.archives-ouvertes.fr/)), etc.
 
 
 Self-Hosted
@@ -488,34 +494,97 @@ External Hosting (Sources)
 MINES ParisTech / DOI
 --------------------------------------------------------------------------------
 
-[![](images/Complex Analysis and Applications.png)](http://direns.mines-paristech.fr/Sites/Complex-analysis/)
+DOI: 10.23646/oer.000001
+
+[![](images/Complex Analysis and Applications.png)](https://doi.org/10.23646/oer.000001)
 
 -----
 
 Document Format & Tools
 --------------------------------------------------------------------------------
 
-Hard problem.
+  - Document Output Format ?
 
-Source?
+  - Process / Tooling ?
 
-Target: HTML, PDF, other? Digital first?
+  - Document Input Format ?
 
-**TODO:** develop
 
-Universal Model & converters?
+![HTML5](images/html5.png){.icon} The Open Web
+--------------------------------------------------------------------------------
 
-Benefits HTML model / constraint of PDF fallback.
+Old strengths and
+[growing set of technologies][HTML5]
 
-Document Model, Software support, transformation, example.
+Semantics /
+Connectivity /
+Offline and storage /
+Multimedia /
+2D/3D graphics /
+Performance and integration /
+Device access /
+Styling
+
+[HTML5]: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+
+
+Examples
+--------------------------------------------------------------------------------
+
+  - [WebFonts](https://fonts.google.com/specimen/Alegreya)
+
+  - [Math Support](https://eul.ink/complex-analysis/Cauchy's%20Integral%20Theorem%20--%20Global%20Version/#theorem--cauchys-residue-theorem.)
+
+  - [References](https://eul.ink/complex-analysis/Complex-Differentiability/#references)
+
+  - [Unobtrusive Proofs](https://eul.ink/complex-analysis/The%20Winding%20Number/#definition--variation-of-the-argument.)
+
+  - [Code Integration](http://eul.ink/complex-analysis/Complex-Step%20Differentiation/#appendix)
+
+  - [SVG Images](https://eul.ink/complex-analysis/Cauchy's%20Integral%20Theorem%20--%20Global%20Version/#the-proof)
+
+  - ...
+
+Web-First vs Hybrid Models
+--------------------------------------------------------------------------------
+
+#### Still Need PDF/Print ?
+
+**Simple format + document model + "converters"**
+
+I have been happy with:
+
+  - [Markdown](https://daringfireball.net/projects/markdown/),
+    a plain text format for the Web   
+    (try online [<i class="fa fa-pencil"></i>](https://dillinger.io/))
+
+  - [Text.Pandoc.Definition](https://hackage.haskell.org/package/pandoc-types-1.19/docs/Text-Pandoc-Definition.html) a Haskell type hierarchy
+
+  - [Pandoc](https://pandoc.org/) a "universal document converter"
+
+
+Benefits of a Neutral Document Model
+--------------------------------------------------------------------------------
+
+  - Multiple output targets (Web, PDF, E-PUB, etc.)
+
+  - Transform your documents 
+
+    (e.g. create [a book](https://eul.ink/complex-analysis/Complex%20Analysis%20and%20Applications%20(a4).pdf) from several smaller documents)
+
+  - Migration / Future-proof
+
 
 
 Building
 --------------------------------------------------------------------------------
 
+Make it easy to build the document   
+(*You are probably the one doing it anyway!*)
+
   - Setup (instructions / script) & Build (script)
 
-  - Provide build platforms (containers or VMs)
+  - Provide build platforms ([containers](https://bitbucket.org/boisgera/complex-differentiability/src) or VMs)
 
   - Continuous integration:
     [<i class="fa fa-github"></i>](https://github.com/boisgera/reveal-js-demo)
