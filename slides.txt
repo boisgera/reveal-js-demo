@@ -5,24 +5,26 @@
 Introduction
 ================================================================================
 
-Context
+![Sébastien Boisgérault](images/photo.png){.icon}  Who Am I?
 --------------------------------------------------------------------------------
 
-Some teaching "problems" "solved" by technology.
+  - Lecturer / Researcher
 
-A collection of use cases
+  - MINES Paristech Center for Robotics
 
-food for thought ...
+  - Mathematics / Control / Signal Processing / ...
 
-----
 
-Stuff from
+This Talk
+--------------------------------------------------------------------------------
 
-  - Applied Mathematics
+In the context of Web Tech & Teaching:
 
-  - Signal Processing
+experience feedback / thoughts / tech. watch
 
-  - Mecha, etc.
+  - collection of use cases (some are tiny)
+
+  - pedagogy / implementation / publishing
 
 
 Cauchy-Riemann Equations
@@ -221,6 +223,20 @@ Context
 
   - no prerequisite (programming, signal processing)
 
+Very tight time budget. Can software help?
+
+
+Audio Coding "for Humans"
+--------------------------------------------------------------------------------
+
+Python [`audio`](https://pypi.python.org/pypi/audio) package
+
+  - focus on the API (few new features)
+
+  - match the domain abstractions (several layers)
+
+  - suitable for live demos & pseudo-code
+
 
 Software "for Humans"
 --------------------------------------------------------------------------------
@@ -246,29 +262,20 @@ The Python language is already made for humans:
   - etc.
 
 
-Audio Coding for Humans
---------------------------------------------------------------------------------
-
-Python `audio` package / collection of modules
-
-  - focus on the API (few new features)
-
-  - match the domain abstractions (several layers)
-
-  - suitable for live demos & pseudo-code
-
-
 Make / Play / Save a Pure Tone
 --------------------------------------------------------------------------------
 
 ### High-level API
 
-Use [NumPy](http://www.numpy.org/) arrays.
+<audio controls="controls">
+  Your browser does not support the <code>audio</code> element.
+  <source src="sound/A4.wav" type="audio/wav">
+</audio>
 
     >>> f = 440.0
     >>> x = cos(2 * pi * f * t)
-    array([ 1.        ,  0.99803566,  0.99215037, ...,  0.98236725,
-            0.99215037,  0.99803566])
+    >>> x
+    array([ 1.        ,  0.99803566,  0.99215037, ...,  ,  0.99803566])
     >>> audio.io.play(x)
     >>> audio.wave.write(x, "A4.wav")
 
@@ -303,13 +310,11 @@ Read Raw Binary Data / Metadata
 Specific Needs
 --------------------------------------------------------------------------------
 
-It works on my machine! But ...
+It now works on my machine! But ...
 
-  - non-standard and/or home-made software
-    (make your software available!)
+  - non-standard software
 
   - system/platform dependencies
-    (your software is *not* portable)
 
   - need a custom student experience
 
@@ -317,14 +322,14 @@ It works on my machine! But ...
 Platform Architecture
 --------------------------------------------------------------------------------
 
- 1. Virtual Machines: 
+ 1. Native Machines (throw-away): 
+    [![](images/ubuntu.png){.icon}][Ubuntu]  / 
+    <i class="fa fa-desktop"></i>
+
+ 2. Virtual Machines: 
     [![](images/ubuntu.png){.icon}][Ubuntu] / 
     [![](images/virtualbox.png){.icon}][VirtualBox] / 
     [![](images/windows.png){.icon}][Windows] / 
-    <i class="fa fa-desktop"></i>
-
- 2. Native Machines (throw-away): 
-    [![](images/ubuntu.png){.icon}][Ubuntu]  / 
     <i class="fa fa-desktop"></i>
 
  3. Cloud-based VM:
