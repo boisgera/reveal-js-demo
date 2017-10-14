@@ -503,11 +503,11 @@ DOI: 10.23646/oer.000001
 Document Format & Tools
 --------------------------------------------------------------------------------
 
-  - Document Output Format ?
+  - Document Output Format?
 
-  - Process / Tooling ?
+  - Process / Tooling?
 
-  - Document Input Format ?
+  - Document Input Format?
 
 
 ![HTML5](images/html5.png){.icon} The Open Web
@@ -563,7 +563,7 @@ I have been happy with:
   - [Pandoc](https://pandoc.org/) a "universal document converter"
 
 
-Benefits of a Neutral Document Model
+Benefits of a Generic Document Model
 --------------------------------------------------------------------------------
 
   - Multiple output targets (Web, PDF, E-PUB, etc.)
